@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "695857079887",
+    "firebase_url": "https://appmyjnia-default-rtdb.firebaseio.com",
+    "project_id": "appmyjnia",
+    "storage_bucket": "appmyjnia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695857079887:android:87a872c9040e3cf03fac3a",
+        "android_client_info": {
+          "package_name": "com.example.projekt_pianka_myjnia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695857079887-q8h6c0enfick2mclqb47ef7dj6pq2bpn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE3GHZiodPz6OQs89NkuM62HEi6WtQyuI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695857079887-q8h6c0enfick2mclqb47ef7dj6pq2bpn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
