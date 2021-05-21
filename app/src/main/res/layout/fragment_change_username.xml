@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/fcuarrow_back_registration"
+            android:id="@+id/fcuarrow_back_account"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="16dp"

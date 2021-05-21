@@ -59,7 +59,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
     FirebaseUser firebaseUser;
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
-    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -67,7 +67,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         View rootView = inflater.inflate(R.layout.fragment_account, container, false);
 
 
-        acc_arrow_back_registration = (Button) rootView.findViewById(R.id.acc_arrow_back_registration);
+        acc_arrow_back_registration = (Button) rootView.findViewById(R.id.fcuarrow_back_account);
         acc_arrow_back_registration.setOnClickListener(this::onClick);
 
         acc_button_change_username = (Button) rootView.findViewById(R.id.acc_button_change_username);
@@ -182,7 +182,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         Fragment fragment2 = null;
 
         switch (v.getId()) {
-            case R.id.acc_arrow_back_registration:
+            case R.id.fcuarrow_back_account:
                 Intent login_register = new Intent(getContext(), MainActivity.class);
                 startActivity(login_register);
                 break;

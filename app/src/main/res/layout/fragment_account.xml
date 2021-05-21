@@ -104,7 +104,7 @@
         </androidx.cardview.widget.CardView>
 
         <Button
-            android:id="@+id/acc_arrow_back_registration"
+            android:id="@+id/acc_arrow_back_home"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="16dp"

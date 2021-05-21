@@ -223,7 +223,7 @@
         app:srcCompat="@mipmap/ic_icon_logo_round" />
 
     <Button
-        android:id="@+id/arrow_back_registration"
+        android:id="@+id/logarrow_back_welcome"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"

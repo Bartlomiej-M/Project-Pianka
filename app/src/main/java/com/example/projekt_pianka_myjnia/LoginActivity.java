@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.acc_arrow_back_registration:
+            case R.id.logarrow_back_welcome:
                 Intent arrow_back_login = new Intent(LoginActivity.this, WelcomeActivity.class);
                 startActivity(arrow_back_login);
                 break;

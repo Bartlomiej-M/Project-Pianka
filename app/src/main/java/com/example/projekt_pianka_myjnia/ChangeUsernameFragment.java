@@ -43,7 +43,7 @@ public class ChangeUsernameFragment extends Fragment implements View.OnClickList
 
         mAuth = FirebaseAuth.getInstance();//FireBase connecting try
 
-        fcuarrow_back_registration = (Button) rootView.findViewById(R.id.fcuarrow_back_registration);
+        fcuarrow_back_registration = (Button) rootView.findViewById(R.id.fcuarrow_back_account);
         fcuarrow_back_registration.setOnClickListener(this);
 
         fcuusernameChange = (TextInputEditText) rootView.findViewById(R.id.fcuusernameChange);
@@ -59,7 +59,7 @@ public class ChangeUsernameFragment extends Fragment implements View.OnClickList
         Fragment fragment = null;
 
         switch (v.getId()) {
-            case R.id.fcuarrow_back_registration:
+            case R.id.fcuarrow_back_account:
                 fragment = new AccountFragment();
                 loadFragment(fragment);
                 break;
