@@ -52,8 +52,8 @@ import androidx.fragment.app.FragmentManager;
 public class AccountFragment extends Fragment implements View.OnClickListener {
 
     private String userID;
-    private ImageView profilImage;
-    private Button changeProfilImage, acc_arrow_back_registration, acc_button_change_username, acc_button_change_password, acc_button_check_history, acc_button_peymant, acc_button_personal_data;
+    public ImageView profilImage;
+    private Button changeProfilImage, acc_arrow_back_home, acc_button_change_username, acc_button_update_password, acc_button_check_history, acc_button_peymant, acc_button_personal_data;
 
     FirebaseStorage firebaseStorage;
     FirebaseUser firebaseUser;
@@ -67,14 +67,14 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         View rootView = inflater.inflate(R.layout.fragment_account, container, false);
 
 
-        acc_arrow_back_registration = (Button) rootView.findViewById(R.id.fcuarrow_back_account);
-        acc_arrow_back_registration.setOnClickListener(this::onClick);
+        acc_arrow_back_home = (Button) rootView.findViewById(R.id.acc_arrow_back_home);
+        acc_arrow_back_home.setOnClickListener(this);
 
         acc_button_change_username = (Button) rootView.findViewById(R.id.acc_button_change_username);
         acc_button_change_username.setOnClickListener(this);
 
-        acc_button_change_password = (Button) rootView.findViewById(R.id.acc_button_change_password);
-        acc_button_change_password.setOnClickListener(this::onClick);
+        acc_button_update_password = (Button) rootView.findViewById(R.id.acc_button_update_password);
+        acc_button_update_password.setOnClickListener(this::onClick);
 
         acc_button_check_history = (Button) rootView.findViewById(R.id.acc_button_check_history);
         acc_button_check_history.setOnClickListener(this::onClick);
@@ -99,6 +99,8 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userProfile = snapshot.getValue(User.class);
                 Glide.with(getContext()).load(userProfile.getProfil_picture()).into(profilImage);
+
+
                 if (userProfile != null) {
                     String username = userProfile.username;
                     String email = userProfile.email;
@@ -179,32 +181,32 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {//////////////////////////////////////////////////////////////////////OnClick add button////////////<----------HERE
-        Fragment fragment2 = null;
+        Fragment fragment = null;
 
         switch (v.getId()) {
-            case R.id.fcuarrow_back_account:
+            case R.id.acc_arrow_back_home:
                 Intent login_register = new Intent(getContext(), MainActivity.class);
                 startActivity(login_register);
                 break;
 
             case R.id.acc_button_change_username:
-                fragment2 = new ChangeUsernameFragment();
-                loadFragment(fragment2);
+                fragment = new ChangeUsernameFragment();
+                loadFragment(fragment);
                 break;
 
-            case R.id.acc_button_change_password:
-           /*     fragment = new ChangePasswordFragment();
-                loadFragment(fragment);*/
+            case R.id.acc_button_update_password:
+                fragment = new UpdatePasswordFragment();
+                loadFragment(fragment);
                 break;
 
             case R.id.acc_button_check_history:
-                fragment2 = new OrderHistoryFragment();
-                loadFragment(fragment2);
+                fragment = new OrderHistoryFragment();
+                loadFragment(fragment);
                 break;
 
             case R.id.acc_button_peymant:
-          /*      fragment = new PaymentFragment();
-                loadFragment(fragment);*/
+                fragment = new PaymentFragment();
+                loadFragment(fragment);
                 break;
             case R.id.acc_button_personal_data:
              /*   fragment = new PersonalDataFragment();
@@ -215,10 +217,10 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void loadFragment(Fragment fragment2) {
+    private void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frame, fragment2).commit();
+        fragmentTransaction.replace(R.id.frame, fragment).commit();
         fragmentTransaction.addToBackStack(null);
     }
 }

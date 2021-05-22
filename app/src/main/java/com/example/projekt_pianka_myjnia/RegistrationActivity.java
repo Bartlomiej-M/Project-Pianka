@@ -84,6 +84,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
         String username = textInputEditTextUsername.getText().toString().trim();
         String password = textInputEditTextPassword.getText().toString().trim();
         String email = textInputEditTextEmail.getText().toString().trim();
+        int brudaski_score = 0;
         String profil_picture = "Empty picture";
 
         if (fullname.isEmpty()) {
@@ -122,7 +123,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            User user = new User(fullname, username, email, profil_picture);
+                            User user = new User(brudaski_score, fullname, username, email, profil_picture);
 
                             rootNode = FirebaseDatabase.getInstance();
                             reference = rootNode.getReference();

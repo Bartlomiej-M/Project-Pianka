@@ -1,9 +1,8 @@
 package com.example.projekt_pianka_myjnia;
 
-import android.net.Uri;
-
 public class User {
-    String fullname, username, email;
+
+    String profil_picture;
 
     public String getProfil_picture() {
         return profil_picture;
@@ -13,16 +12,21 @@ public class User {
         this.profil_picture = profil_picture;
     }
 
-    String profil_picture;
+
+    String fullname;
+    String username;
+    String email;
+    int brudaski_score;
 
     public User() {
 
     }
 
-    public User(String fullname, String username, String email, String profil_picture) {
+    public User(int brudaski_score, String fullname, String username, String email, String profil_picture) {
         this.fullname = fullname;
         this.username = username;
         this.email = email;
+        this.brudaski_score = brudaski_score;
     }
 
     public String getFullname() {
@@ -49,5 +53,11 @@ public class User {
         this.email = email;
     }
 
+    public int getbrudaski() {
+        return brudaski_score;
+    }
 
+    public void setbrudaski(int brudaski_score) {
+        this.brudaski_score = brudaski_score;
+    }
 }

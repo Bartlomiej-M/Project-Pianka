@@ -18,7 +18,7 @@ public class PaymentFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_account, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_payment, container, false);
 
         payarrow_back_account = (Button) rootView.findViewById(R.id.payarrow_back_account);
         payarrow_back_account.setOnClickListener(this);

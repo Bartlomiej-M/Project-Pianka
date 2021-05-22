@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView login_registration, buttonForgotYouPassword;
-    private Button buttonLogin, arrow_back_login;
+    private Button buttonLogin, logarrow_back_welcome;
     private TextInputEditText textInputEditTextPassword, textInputEditTextEmail;
     private FirebaseAuth mAuth;
 
@@ -41,8 +41,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         textInputEditTextEmail = (TextInputEditText) findViewById(R.id.emailReset);
         textInputEditTextPassword = (TextInputEditText) findViewById(R.id.passwordLogin);
 
-        arrow_back_login = (Button) findViewById(R.id.arrow_back_registration);//Button registration new account
-        arrow_back_login.setOnClickListener(LoginActivity.this);
+        logarrow_back_welcome = (Button) findViewById(R.id.logarrow_back_welcome);//Button registration new account
+        logarrow_back_welcome.setOnClickListener(LoginActivity.this);
     }
 
     @Override
