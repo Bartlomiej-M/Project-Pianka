@@ -113,7 +113,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
 
                     case R.id.aboutUs:
-
+                        fragment = new AboutUsFragment();
+                        loadFragment(fragment);
                         break;
 
                     case R.id.logout:
