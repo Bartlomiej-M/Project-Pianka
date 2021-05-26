@@ -25,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewdate"
             android:layout_width="0dp"
             android:layout_height="124dp"
             android:gravity="center"

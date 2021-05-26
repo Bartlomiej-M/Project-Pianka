@@ -92,7 +92,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
 
                     case R.id.notification:
-
+                        fragment = new NotificationFragment();
+                        loadFragment(fragment);
                         break;
 
                     case R.id.wishList:

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    tools:context=".RaportFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/rap_arrow_back_home"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/ripple_effect"
+            android:foreground="@drawable/ic_arrow_back"
+            app:backgroundTint="#69B608"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="DATE"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_date"
+            app:layout_constraintTop_toTopOf="@+id/btn_date" />
+
+        <Button
+            android:id="@+id/btn_date"
+            android:layout_width="0dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="179dp"
+            android:text="Date of appearance "
+            android:foreground="@drawable/ripple_effect"
+            android:textStyle="bold"
+            app:backgroundTint="#69B608"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rap_arrow_back_home" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_date">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/rap_subject_EditText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#00ffffff"
+                android:ems="10"
+                android:hint="Report subject "
+                android:inputType="textPersonName"
+                android:maxLength="35"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#808080"
+                app:boxStrokeColor="#FFFFFF"
+                app:boxStrokeErrorColor="#FFFFFF"
+                app:endIconTint="#FFFFFF"
+                app:hintTextColor="#FFFFFF"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="2dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/rap_send_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/rap_desc_EditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#00ffffff"
+                android:ems="10"
+                android:gravity="start"
+                android:hint="Description of the problem"
+                android:inputType="textMultiLine"
+                android:scrollbars="vertical"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#808080"
+                android:windowSoftInputMode="adjustPan"
+                android:focusable="true"
+                android:fitsSystemWindows="true"
+                app:boxStrokeColor="#FFFFFF"
+                app:boxStrokeErrorColor="#FFFFFF"
+                app:endIconTint="#FFFFFF"
+                app:hintTextColor="#FFFFFF"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="48dp" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/rap_send_btn"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="50dp"
+            android:focusable="auto"
+            android:foreground="@drawable/ripple_effect"
+            android:text="Send the report"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:backgroundTint="#69B608"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
