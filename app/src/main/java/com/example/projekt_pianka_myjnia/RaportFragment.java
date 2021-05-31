@@ -87,14 +87,11 @@ public class RaportFragment extends Fragment implements View.OnClickListener {
                 tv_date.setText(date);
             }
         };
-
         return rootView;
     }
 
     @Override
     public void onClick(View v) {
-
-
         switch (v.getId()) {
             case R.id.rap_arrow_back_home:
                 fragment = new NotificationFragment();
@@ -129,18 +126,31 @@ public class RaportFragment extends Fragment implements View.OnClickListener {
         }//data raport check
 
         HashMap<String, String> raport = new HashMap<String, String>();
+        raport.put("Date: ", report_date);
         raport.put("Subject: ", report_subject);
         raport.put("Description: ", report_description);
-        raport.put("Date: ", report_date);
-        final int random = new Random().nextInt(1) + 2000;
+
+
+        int min = 65;
+        int max = 80;
+        Random r = new Random();
+        int random = r.nextInt(max - min + 1) + min;
+
         rootNode = FirebaseDatabase.getInstance();
         databaseReference = rootNode.getReference();
         databaseReference.child("Raports").child(FirebaseAuth.getInstance().getCurrentUser().getUid() + "id: " + random).setValue(raport).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(getContext(), "The report has been sent ", Toast.LENGTH_SHORT).show();
-                fragment = new NotificationFragment();
-                loadFragment(fragment);
+                raport.put("Subject: ", "Raport");
+                raport.put("Description: ", "Raport został dostarczony");
+                databaseReference.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Notification").child("id: " + random).setValue(raport).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(getContext(), "The report has been sent ", Toast.LENGTH_SHORT).show();
+                        fragment = new NotificationFragment();
+                        loadFragment(fragment);
+                    }
+                });
             }
         });
     }
