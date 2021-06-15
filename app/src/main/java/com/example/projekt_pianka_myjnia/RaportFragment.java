@@ -126,9 +126,9 @@ public class RaportFragment extends Fragment implements View.OnClickListener {
         }//data raport check
 
         HashMap<String, String> raport = new HashMap<String, String>();
-        raport.put("Date: ", report_date);
-        raport.put("Subject: ", report_subject);
-        raport.put("Description: ", report_description);
+        raport.put("Date", report_date);
+        raport.put("Subject", report_subject);
+        raport.put("Description", report_description);
 
 
         int min = 65;
